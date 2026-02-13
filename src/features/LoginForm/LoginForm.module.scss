@@ -1,0 +1,37 @@
+@use '@/styles/variables' as v;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: v.$space-md;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: v.$space-xs;
+  color: v.$color-gray;
+}
+
+.fieldContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid v.$color-gray;
+  border-radius: v.$radius-md;
+
+  &:focus-within {
+    border-color: v.$color-primary;
+  }
+
+  &.hasError {
+    border-color: v.$color-error;
+  }
+}
+
+.input {
+  //   width: 100%;
+  padding: 12px;
+  border: v.$color-gray;
+  background: transparent;
+  outline: none;
+}

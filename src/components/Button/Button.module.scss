@@ -1,0 +1,43 @@
+@use '@/styles/variables' as v;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: v.$radius-md;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+
+  // PRIMARY VARIANT
+  &--primary {
+    background-color: v.$color-success;
+    color: v.$color-white;
+    &:hover {
+      border-color: v.$color-success;
+    }
+  }
+
+  // OUTLINE VARIANT
+  &--outline {
+    background-color: transparent;
+    border-color: v.$color-success;
+    color: v.$color-success;
+    &:hover {
+      background-color: v.$color-success;
+      border-color: v.$color-success;
+      color: v.$color-white;
+    }
+  }
+
+  // DANGER VARIANT
+  &--danger {
+    background-color: v.$color-error;
+    color: v.$color-white;
+    &:hover {
+      border-color: v.$color-error;
+    }
+  }
+}

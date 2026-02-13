@@ -1,0 +1,31 @@
+// Colors
+$color-primary: #213f7d;
+$color-success: #39cdcc;
+$color-error: #e4033b;
+$color-gray: #545f7d;
+$color-white: #ffffff;
+
+// Font Names
+$font-family-main: 'Work Sans', sans-serif;
+$font-family-secondary: 'Avenir Next', sans-serif;
+
+$font-body: $font-family-main;
+$font-auth: $font-family-secondary;
+
+// Font Weight
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;

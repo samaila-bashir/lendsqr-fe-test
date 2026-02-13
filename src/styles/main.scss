@@ -1,0 +1,7 @@
+@use 'fonts';
+@use 'variables' as v;
+
+body {
+  font-family: v.$font-body;
+  color: v.$color-primary;
+}
