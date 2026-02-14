@@ -1,3 +1,16 @@
 export { default as Logo } from './logo.png';
 export { default as LoginIllustration } from './pablo-sign-in 1.png';
 export { default as UserPlaceholder } from './avatar.png';
+export { default as Briefcase } from './briefcase 1.png';
+export { default as Home } from './home 1.png';
+export { default as UserFriends } from './user-friends 1.png';
+export { default as Users } from './users 1.png';
+export { default as Sack } from './sack 1.png';
+export { default as Handshake } from './handshake-regular 1.png';
+export { default as PiggyBank } from './piggy-bank 1.png';
+export { default as Loan } from './loan.png';
+export { default as UserCheck } from './user-check 1.png';
+export { default as UserTimes } from './user-times 1.png';
+export { default as Bank } from './bank.png';
+export { default as Coins } from './coins-solid 1.png';
+export { default as Transactions } from './transaction.png';
