@@ -6,28 +6,28 @@
   justify-content: center;
   padding: 10px 24px;
   border-radius: v.$radius-md;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 2px solid transparent;
 
   // PRIMARY VARIANT
   &--primary {
-    background-color: v.$color-success;
+    background-color: v.$color-secondary;
     color: v.$color-white;
     &:hover {
-      border-color: v.$color-success;
+      border-color: v.$color-secondary;
     }
   }
 
   // OUTLINE VARIANT
   &--outline {
     background-color: transparent;
-    border-color: v.$color-success;
-    color: v.$color-success;
+    border-color: v.$color-secondary;
+    color: v.$color-secondary;
     &:hover {
-      background-color: v.$color-success;
-      border-color: v.$color-success;
+      background-color: v.$color-secondary;
+      border-color: v.$color-secondary;
       color: v.$color-white;
     }
   }

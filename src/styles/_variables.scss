@@ -1,6 +1,6 @@
 // Colors
 $color-primary: #213f7d;
-$color-success: #39cdcc;
+$color-secondary: #39cdcc;
 $color-error: #e4033b;
 $color-gray: #545f7d;
 $color-white: #ffffff;
@@ -9,8 +9,8 @@ $color-white: #ffffff;
 $font-family-main: 'Work Sans', sans-serif;
 $font-family-secondary: 'Avenir Next', sans-serif;
 
-$font-body: $font-family-main;
-$font-auth: $font-family-secondary;
+$font-primary: $font-family-main;
+$font-secondary: $font-family-secondary;
 
 // Font Weight
 $weight-light: 300;
