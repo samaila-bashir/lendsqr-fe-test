@@ -1,11 +1,21 @@
 import {
+  BadgePercent,
+  Bank,
   Briefcase,
+  ChartBar,
+  ClipboardList,
+  Coins,
+  Galaxy,
   Handshake,
   Home,
   Loan,
   PiggyBank,
   Sack,
+  Scroll,
+  Sliders,
+  Transactions,
   UserCheck,
+  UserCog,
   UserFriends,
   Users,
   UserTimes,
@@ -82,9 +92,68 @@ const navLinks: NavlinksProps[] = [
     label: 'BUSINESSES',
   },
   {
-    id: 'karma',
-    label: 'Karma',
-    icon: UserTimes,
+    id: 'organization',
+    label: 'Organization',
+    icon: Briefcase,
+  },
+  {
+    id: 'loan-products',
+    label: 'Loan Products',
+    icon: Loan,
+  },
+  {
+    id: 'savings-products',
+    label: 'Savings Products',
+    icon: Bank,
+  },
+  {
+    id: 'fees-and-charges',
+    label: 'Fees and Charges',
+    icon: Coins,
+  },
+  {
+    id: 'transactions',
+    label: 'Transactions',
+    icon: Transactions,
+  },
+  {
+    id: 'services',
+    label: 'Services',
+    icon: Galaxy,
+  },
+  {
+    id: 'service-account',
+    label: 'Service Account',
+    icon: UserCog,
+  },
+  {
+    id: 'settlements',
+    label: 'Settlements',
+    icon: Scroll,
+  },
+  {
+    id: 'reports',
+    label: 'Reports',
+    icon: ChartBar,
+  },
+  {
+    type: 'header',
+    label: 'SETTINGS',
+  },
+  {
+    id: 'preferences',
+    label: 'Preferences',
+    icon: Sliders,
+  },
+  {
+    id: 'fees-and-pricing',
+    label: 'Fees and Pricing',
+    icon: BadgePercent,
+  },
+  {
+    id: 'audit-logs',
+    label: 'Audit Logs',
+    icon: ClipboardList,
   },
 ];
 

@@ -57,10 +57,20 @@
 }
 
 .icon {
+  width: 56px;
+  height: 100%;
+  background-color: v.$color-secondary;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  padding-left: 12px;
-  color: v.$color-gray;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .errorText {

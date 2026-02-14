@@ -31,7 +31,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && <label className={styles.label}>{label}</label>}
 
         <div className={`${containerClasses} ${error ? styles.hasError : ''}`}>
-          {icon && <span className={styles.icon}>{icon}</span>}
           <input
             ref={ref}
             className={`${styles.input} ${className || ''}`}
@@ -41,6 +40,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {showPasswordBtn && (
             <p className={styles.showPasswordBtn}>{showPasswordBtn}</p>
           )}
+          {icon && <span className={styles.icon}>{icon}</span>}
         </div>
 
         {error && <span className={styles.errorText}>{error}</span>}

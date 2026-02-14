@@ -11,8 +11,10 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-  & > :nth-child(-n + 2) {
-    margin-top: 30px;
+  .nav_list {
+    & > li:nth-child(-n + 2) {
+      margin-top: 30px;
+    }
   }
 
   &::-webkit-scrollbar {

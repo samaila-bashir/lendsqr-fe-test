@@ -2,17 +2,27 @@
 
 .topbar_container {
   height: 100px;
-  box-shadow: 3px 0px 20px rgba (0, 0, 0, 0.04);
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.07);
   background-color: v.$color-white;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 100;
   padding: 0 40px;
   overflow: hidden;
+  gap: 20px;
 
   @media (max-width: 992px) {
     justify-content: space-between;
+  }
+}
+
+.logo {
+  width: 150px;
+  @media (max-width: 992px) {
+    width: clamp(100px, 8vw, 150px);
+    height: auto;
   }
 }
 
@@ -28,10 +38,45 @@
   }
 }
 
-.logo {
-  width: 150px;
+.right_area {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
   @media (max-width: 992px) {
-    width: clamp(100px, 8vw, 150px);
-    height: auto;
+    display: none;
+  }
+}
+
+.doc {
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.notification_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.user_profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  p {
+    font-weight: 500;
+    color: v.$color-primary;
+    font-size: 16px;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }
