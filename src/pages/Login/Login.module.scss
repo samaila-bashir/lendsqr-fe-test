@@ -1,0 +1,68 @@
+@use '@/styles/variables' as v;
+
+.login_container {
+  display: flex;
+  justify-content: space-between;
+  background-color: v.$color-white;
+
+  @media (max-width: 992px) {
+    display: block;
+  }
+}
+
+.login_contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.images_container {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 60px 40px 60px;
+
+  @media (max-width: 992px) {
+    padding: 50px 0 0;
+  }
+}
+
+.logo_wrapper {
+  margin-bottom: 60px;
+  margin-left: 20px;
+  margin-top: -30px;
+
+  img {
+    height: 30px;
+  }
+
+  @media (max-width: 992px) {
+    margin-bottom: 0px;
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 0px;
+  }
+}
+
+.illustration_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}

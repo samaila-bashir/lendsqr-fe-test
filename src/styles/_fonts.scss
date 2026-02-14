@@ -1,0 +1,66 @@
+// AVENIR NEXT FONT
+@font-face {
+  font-family: 'Avenir Next';
+  src:
+    url('../assets/fonts/AvenirNextCyr-Regular.woff2') format('woff2'),
+    url('../assets/fonts/AvenirNextCyr-Regular.woff') format('woff'),
+    url('../assets/fonts/AvenirNextCyr-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src:
+    url('../assets/fonts/AvenirNextCyr-Medium.woff2') format('woff2'),
+    url('../assets/fonts/AvenirNextCyr-Medium.woff') format('woff'),
+    url('../assets/fonts/AvenirNextCyr-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src:
+    url('../assets/fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+    url('../assets/fonts/AvenirNextCyr-Bold.woff') format('woff'),
+    url('../assets/fonts/AvenirNextCyr-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// WORK SANS FONT
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../assets/fonts/WorkSans-Light') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../assets/fonts/WorkSans-Regular') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../assets/fonts/WorkSans-SemiBold') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../assets/fonts/WorkSans-Bold') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

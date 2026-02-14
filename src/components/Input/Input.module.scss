@@ -1,0 +1,84 @@
+@use '@/styles/variables' as v;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: v.$space-md;
+  width: 100%;
+}
+
+.label {
+  font-family: v.$font-primary;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: v.$space-sm;
+  color: v.$color-gray;
+}
+
+.fieldContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(v.$color-gray, 0.2);
+  transition: border-color 0.2s ease;
+
+  &:focus-within {
+    border-color: v.$color-secondary;
+  }
+
+  &.hasError {
+    border-color: v.$color-error;
+  }
+}
+
+.radius-sm {
+  border-radius: v.$radius-sm;
+}
+
+.radius-md {
+  border-radius: v.$radius-md;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: v.$font-primary;
+  color: v.$color-primary;
+
+  &::placeholder {
+    color: rgba(v.$color-gray, 0.6);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: v.$font-secondary;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  color: v.$color-gray;
+}
+
+.errorText {
+  font-size: 12px;
+  color: v.$color-error;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.showPasswordBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: v.$color-secondary;
+  font-family: v.$font-secondary;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
