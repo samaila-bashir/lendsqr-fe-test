@@ -1,0 +1,80 @@
+@use '@/styles/variables' as v;
+
+.pagination_section {
+  margin-top: v.$space-lg;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-md;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: v.$space-sm;
+  flex-wrap: wrap;
+}
+
+.showing_text {
+  font-size: 14px;
+  color: v.$color-gray;
+}
+
+.page_size_select {
+  padding: 6px 12px;
+  border: 2px solid rgba(v.$color-gray, 0.2);
+  border-radius: v.$radius-sm;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  color: v.$color-primary;
+  background: v.$color-white;
+  cursor: pointer;
+  margin: 0 4px;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-secondary;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page_btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-radius: v.$radius-sm;
+  background: transparent;
+  font-family: v.$font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  color: v.$color-gray;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    color: v.$color-primary;
+    background: rgba(v.$color-secondary, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--active {
+    background: v.$color-secondary;
+    color: v.$color-white;
+  }
+
+  &--ellipsis {
+    cursor: default;
+    min-width: 24px;
+    padding: 0;
+  }
+}

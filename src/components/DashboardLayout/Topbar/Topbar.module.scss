@@ -8,16 +8,16 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 100;
+  z-index: 1001;
   padding: 0 40px;
-  overflow: hidden;
+  overflow: visible;
   gap: 20px;
+  flex-shrink: 0;
 
   @media (max-width: 992px) {
     justify-content: space-between;
     padding: 0 20px;
     flex-wrap: nowrap;
-    overflow: visible;
   }
 
   @media (max-width: 480px) {

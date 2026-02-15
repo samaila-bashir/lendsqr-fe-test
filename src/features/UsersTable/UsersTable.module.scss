@@ -1,0 +1,298 @@
+@use '@/styles/variables' as v;
+
+.table_section {
+  margin-top: v.$space-xl;
+}
+
+.table_wrapper {
+  position: relative;
+  background-color: v.$color-white;
+  border-radius: v.$radius-md;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+  padding: v.$space-lg;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.th {
+  text-align: left;
+  padding: 20px 16px;
+  font-weight: v.$weight-semibold;
+  color: v.$color-gray;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.th:last-child {
+  width: 48px;
+  min-width: 48px;
+  box-sizing: border-box;
+}
+
+.th_content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter_btn img,
+.filter_icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.filter_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover img {
+    opacity: 1;
+  }
+
+  &.filter_btn_active img {
+    opacity: 1;
+  }
+}
+
+.td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(v.$color-gray, 0.1);
+  color: v.$color-primary;
+  vertical-align: middle;
+}
+
+.tr:hover .td {
+  background-color: rgba(v.$color-secondary, 0.03);
+}
+
+.status_pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &--active {
+    background: rgba(57, 205, 204, 0.1);
+    color: #39cdcc;
+  }
+
+  &--inactive {
+    background: rgba(84, 95, 125, 0.1);
+    color: v.$color-gray;
+  }
+
+  &--pending {
+    background: rgba(233, 178, 0, 0.1);
+    color: #e9b200;
+  }
+
+  &--blacklisted {
+    background: rgba(228, 3, 59, 0.1);
+    color: v.$color-error;
+  }
+}
+
+.actions_cell {
+  position: relative;
+  width: 48px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(v.$color-gray, 0.1);
+  vertical-align: middle;
+}
+
+.actions_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: v.$radius-sm;
+
+  &:hover {
+    background: rgba(v.$color-gray, 0.1);
+  }
+}
+
+.actions_menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  z-index: 50;
+  min-width: 180px;
+  background: v.$color-white;
+  border-radius: v.$radius-md;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.07);
+  padding: v.$space-sm;
+  list-style: none;
+  margin: 0;
+}
+
+.actions_menu_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  color: v.$color-primary;
+  text-align: left;
+  border-radius: v.$radius-sm;
+
+  &:hover {
+    background: rgba(v.$color-secondary, 0.08);
+  }
+
+  svg {
+    flex-shrink: 0;
+    color: v.$color-gray;
+  }
+}
+
+.filter_trigger_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+// Vertical filter panel – starts below the table header so the filter toggle stays clickable
+.filter_panel {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  z-index: 10;
+  min-width: 280px;
+  max-width: 320px;
+  background: v.$color-white;
+  border-radius: v.$radius-md;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.07);
+  padding: v.$space-lg;
+  margin: 0 0 0 12px;
+}
+
+.filter_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.filter_form_group {
+  margin-bottom: v.$space-md;
+
+  &:last-of-type {
+    margin-bottom: v.$space-lg;
+  }
+}
+
+.filter_label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: v.$color-gray;
+  margin-bottom: 6px;
+}
+
+.filter_input,
+.filter_select {
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 12px;
+  border: 1px solid rgba(v.$color-gray, 0.2);
+  border-radius: v.$radius-sm;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  color: v.$color-primary;
+  background: v.$color-white;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: rgba(v.$color-gray, 0.4);
+  }
+
+  &::placeholder {
+    color: v.$color-gray;
+    opacity: 0.7;
+  }
+}
+
+.filter_select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23545f7d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.filter_date_wrapper {
+  position: relative;
+  display: block;
+
+  .filter_input {
+    padding-right: 40px;
+  }
+}
+
+.filter_calendar_icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: v.$color-gray;
+  opacity: 0.8;
+}
+
+.filter_actions {
+  display: flex;
+  gap: v.$space-md;
+  margin-top: v.$space-sm;
+}
+
+.filter_actions_btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: v.$radius-md;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &--reset {
+    background: v.$color-white;
+    border-color: rgba(v.$color-gray, 0.25);
+    color: v.$color-gray;
+  }
+
+  &--filter {
+    background: v.$color-secondary;
+    color: v.$color-white;
+    border-color: v.$color-secondary;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

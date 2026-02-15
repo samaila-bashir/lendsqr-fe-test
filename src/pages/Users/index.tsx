@@ -4,6 +4,7 @@ import {
   LoanIcon,
   MoneyIcon,
 } from '@/assets/images';
+import UsersTable from '@/features/UsersTable';
 import styles from './Users.module.scss';
 
 const STATS = [
@@ -49,6 +50,8 @@ const Users = () => {
           </article>
         ))}
       </section>
+
+      <UsersTable />
     </div>
   );
 };

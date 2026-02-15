@@ -27,3 +27,4 @@ export { default as UsersIcon } from './users-icon.png';
 export { default as Users2Icon } from './users-2-icon.png';
 export { default as LoanIcon } from './loan-icon.png';
 export { default as MoneyIcon } from './money-icon.png';
+export { default as FilterResultsButton } from './filter-results-button.png';

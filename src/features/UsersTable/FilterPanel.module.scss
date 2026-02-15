@@ -1,0 +1,122 @@
+@use '@/styles/variables' as v;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+
+.panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: min(400px, 90vw);
+  background: v.$color-white;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 201;
+  padding: v.$space-lg;
+  overflow-y: auto;
+}
+
+.panel_title {
+  font-size: 14px;
+  font-weight: v.$weight-semibold;
+  color: v.$color-primary;
+  margin: 0 0 v.$space-lg 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.form_group {
+  margin-bottom: v.$space-md;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: v.$color-gray;
+    margin-bottom: 6px;
+  }
+}
+
+.select,
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid rgba(v.$color-gray, 0.2);
+  border-radius: v.$radius-sm;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  color: v.$color-primary;
+  background: v.$color-white;
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-secondary;
+  }
+
+  &::placeholder {
+    color: rgba(v.$color-gray, 0.6);
+  }
+}
+
+.select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23545f7d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.actions {
+  display: flex;
+  gap: v.$space-md;
+  margin-top: v.$space-lg;
+}
+
+.actions_btn {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: v.$radius-md;
+  font-family: v.$font-primary;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &--reset {
+    background: v.$color-white;
+    border-color: rgba(v.$color-gray, 0.2);
+    color: v.$color-gray;
+  }
+
+  &--filter {
+    background: v.$color-secondary;
+    color: v.$color-white;
+    border-color: v.$color-secondary;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.date_wrapper {
+  position: relative;
+
+  .input {
+    padding-right: 40px;
+  }
+}
+
+.calendar_icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: v.$color-gray;
+}
