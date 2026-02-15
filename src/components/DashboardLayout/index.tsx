@@ -1,9 +1,10 @@
+import { Outlet } from 'react-router-dom';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar';
 import styles from './DashboardLayout.module.scss';
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 
-const DashboardLayout = ({ children }: { children?: ReactNode }) => {
+const DashboardLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
@@ -14,7 +15,9 @@ const DashboardLayout = ({ children }: { children?: ReactNode }) => {
 
       <div className={styles.main_layout}>
         <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <main className={styles.contents}>{children}</main>
+        <main className={styles.contents}>
+          <Outlet />
+        </main>
       </div>
     </div>
   );

@@ -23,3 +23,7 @@ export { default as BadgePercent } from './badge-percent 1.png';
 export { default as ClipboardList } from './clipboard-list 1.png';
 export { default as Notification } from './notification.png';
 export { default as Dropdown } from './dropdown.png';
+export { default as UsersIcon } from './users-icon.png';
+export { default as Users2Icon } from './users-2-icon.png';
+export { default as LoanIcon } from './loan-icon.png';
+export { default as MoneyIcon } from './money-icon.png';

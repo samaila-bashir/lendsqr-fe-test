@@ -6,11 +6,12 @@ import SearchBar from '@/features/SearchBar';
 const Topbar = ({ onToggle }: { onToggle: () => void }) => {
   return (
     <div className={styles.topbar_container}>
-      <img src={Logo} alt="Lendsqr logo" className={styles.logo} />
-
-      <button className={styles.hamburger} onClick={onToggle}>
-        <Menu size={24} />
-      </button>
+      <div className={styles.mobile_header}>
+        <img src={Logo} alt="Lendsqr logo" className={styles.logo} />
+        <button className={styles.hamburger} onClick={onToggle} aria-label="Open menu">
+          <Menu size={28} />
+        </button>
+      </div>
 
       <SearchBar />
 

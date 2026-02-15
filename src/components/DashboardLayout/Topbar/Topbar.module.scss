@@ -15,14 +15,49 @@
 
   @media (max-width: 992px) {
     justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    overflow: visible;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 v.$space-md;
+    gap: v.$space-sm;
+  }
+}
+
+.mobile_header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  min-width: 0;
+
+  @media (max-width: 992px) {
+    flex: 1;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  @media (max-width: 480px) {
+    gap: v.$space-sm;
   }
 }
 
 .logo {
   width: 150px;
+  flex-shrink: 0;
+
   @media (max-width: 992px) {
-    width: clamp(100px, 8vw, 150px);
+    width: clamp(140px, 35vw, 180px);
     height: auto;
+    display: block;
+    min-width: 120px;
+  }
+
+  @media (max-width: 480px) {
+    width: clamp(130px, 38vw, 160px);
+    min-width: 120px;
   }
 }
 
@@ -32,9 +67,32 @@
   border: none;
   cursor: pointer;
   margin-right: 15px;
+  flex-shrink: 0;
+  padding: v.$space-sm;
 
   @media (max-width: 992px) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: v.$space-md;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 0;
+    min-width: 44px;
+    min-height: 44px;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
 

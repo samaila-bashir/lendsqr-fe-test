@@ -1,0 +1,79 @@
+@use '@/styles/variables' as v;
+
+.page_title {
+  font-size: 24px;
+  font-weight: v.$weight-semibold;
+  color: v.$color-primary;
+  margin: 0 0 v.$space-lg 0;
+}
+
+.cards_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: v.$space-lg;
+  margin-bottom: v.$space-xl;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: v.$color-white;
+  padding: v.$space-lg;
+  border-radius: v.$radius-md;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  min-width: 0;
+}
+
+.icon_wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: v.$space-md;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &--users {
+    background: rgba(223, 24, 255, 0.1);
+  }
+
+  &--active {
+    background: rgba(87, 24, 255, 0.1);
+  }
+
+  &--loans {
+    background: rgba(255, 51, 0, 0.1);
+  }
+
+  &--savings {
+    background: rgba(233, 178, 0, 0.1);
+  }
+}
+
+.card_label {
+  font-size: 14px;
+  font-weight: v.$weight-medium;
+  color: v.$color-gray;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 v.$space-xs 0;
+}
+
+.card_value {
+  font-size: 24px;
+  font-weight: v.$weight-semibold;
+  color: v.$color-primary;
+  margin: 0;
+}
