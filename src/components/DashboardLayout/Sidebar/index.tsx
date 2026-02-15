@@ -1,6 +1,7 @@
-import { ChevronDownIcon } from 'lucide-react';
+import { ChevronDownIcon, X } from 'lucide-react';
 import navLinks from './navlinks';
 import styles from './Sidebar.module.scss';
+import { UserPlaceholder } from '@/assets/images';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -12,6 +13,21 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     <nav
       className={`${styles.sidebar_container} ${isOpen ? styles.mobile_open : ''}`}
     >
+      <button
+        className={styles.close_btn}
+        onClick={onClose}
+        aria-label="Close menu"
+      >
+        <X size={20} />
+      </button>
+
+      <div className={styles.mobile_profile}>
+        <div className={styles.user_info}>
+          <img src={UserPlaceholder} alt="Avatar" className={styles.avatar} />
+          <span>Adedeji</span>
+        </div>
+      </div>
+
       <ul className={styles.nav_list}>
         {navLinks.map((link) => {
           if (link.type === 'header') {
