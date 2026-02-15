@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MoreVertical, Eye, UserX, UserCheck, Calendar } from 'lucide-react';
 import { FilterResultsButton } from '@/assets/images';
 import { MOCK_USERS, type User, type UserStatus } from '@/data/users';
@@ -145,6 +146,7 @@ const RowActions = ({
 );
 
 const UsersTable = () => {
+  const navigate = useNavigate();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [filters, setFilters] = useState<FilterValues>(DEFAULT_FILTERS);
   const [dateDisplayValue, setDateDisplayValue] = useState('');
@@ -188,6 +190,7 @@ const UsersTable = () => {
 
   const handleViewDetails = (user: User) => {
     setOpenActionsId(null);
+    navigate('/users/details');
     void user;
   };
 
