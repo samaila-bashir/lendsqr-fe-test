@@ -8,7 +8,11 @@ const Topbar = ({ onToggle }: { onToggle: () => void }) => {
     <div className={styles.topbar_container}>
       <div className={styles.mobile_header}>
         <img src={Logo} alt="Lendsqr logo" className={styles.logo} />
-        <button className={styles.hamburger} onClick={onToggle} aria-label="Open menu">
+        <button
+          className={styles.hamburger}
+          onClick={onToggle}
+          aria-label="Open menu"
+        >
           <Menu size={28} />
         </button>
       </div>

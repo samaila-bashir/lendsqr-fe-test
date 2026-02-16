@@ -10,6 +10,7 @@
   padding-top: 10px;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-bottom: 10px;
 
   .nav_list {
     & > li:nth-child(-n + 2) {
@@ -18,11 +19,7 @@
   }
 
   &::-webkit-scrollbar {
-    width: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(v.$color-primary, 0.1);
-    border-radius: 10px;
+    width: 0px;
   }
 
   @media (max-width: 992px) {
@@ -69,16 +66,15 @@
 
   @media (max-width: 992px) {
     display: flex;
-    flex-direction: column;
     gap: 15px;
-    padding-top: 40px;
+    margin-top: -20px;
   }
 
   .user_info {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 500;
+    font-weight: v.$weight-medium;
     color: v.$color-primary;
 
     .avatar {
@@ -97,7 +93,7 @@
 
 .nav_header {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: v.$weight-medium;
   color: v.$color-gray;
   padding: 30px 30px 10px;
   text-transform: uppercase;
@@ -144,4 +140,38 @@
     border-left-color: v.$color-secondary;
     opacity: 1;
   }
+}
+
+.sidebar_footer {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(33, 63, 125, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logout_btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 30px;
+  background: none;
+  border: none;
+  color: v.$color-primary;
+  font-family: v.$font-primary;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(v.$color-secondary, 0.05);
+  }
+}
+
+.version {
+  padding: 0 30px;
+  font-size: 12px;
+  color: v.$color-primary;
 }

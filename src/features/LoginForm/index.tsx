@@ -27,7 +27,9 @@ const LoginForm = () => {
         </div>
 
         {formFields.map((field) => (
-          <Input key={field.id} {...field} radius="sm" />
+          <div className={styles.form_input}>
+            <Input key={field.id} {...field} radius="sm" />
+          </div>
         ))}
 
         <Link to="#" className={styles.forgotPassword}>

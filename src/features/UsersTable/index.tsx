@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { MoreVertical, Eye, UserX, UserCheck, Calendar } from 'lucide-react';
 import { FilterResultsButton } from '@/assets/images';
 import { MOCK_USERS, type User, type UserStatus } from '@/data/users';
-import { DEFAULT_FILTERS, type FilterValues } from './FilterPanel';
-import Pagination from './Pagination';
+import { DEFAULT_FILTERS, type FilterValues } from './FilterPanel/FilterPanel';
+import Pagination from './Pagination/Pagination';
 import styles from './UsersTable.module.scss';
 
 const ORGANIZATIONS = [
@@ -151,7 +151,7 @@ const UsersTable = () => {
   const [filters, setFilters] = useState<FilterValues>(DEFAULT_FILTERS);
   const [dateDisplayValue, setDateDisplayValue] = useState('');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(9);
   const [openActionsId, setOpenActionsId] = useState<string | null>(null);
   const [users, setUsers] = useState<User[]>(MOCK_USERS);
 

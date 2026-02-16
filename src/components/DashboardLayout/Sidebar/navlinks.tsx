@@ -13,6 +13,7 @@ import {
   Sack,
   Scroll,
   Sliders,
+  Tire,
   Transactions,
   UserCheck,
   UserCog,
@@ -154,6 +155,11 @@ const navLinks: NavlinksProps[] = [
     id: 'audit-logs',
     label: 'Audit Logs',
     icon: ClipboardList,
+  },
+  {
+    id: 'systems-messages',
+    label: 'Systems Messages',
+    icon: Tire,
   },
 ];
 

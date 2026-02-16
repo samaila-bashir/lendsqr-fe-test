@@ -21,7 +21,13 @@ const DEFAULT_FILTERS: FilterValues = {
   status: '',
 };
 
-const ORGANIZATIONS = ['Lendsqr', 'Irorun', 'Lendstar', 'Cashville', 'Fintech Hub'];
+const ORGANIZATIONS = [
+  'Lendsqr',
+  'Irorun',
+  'Lendstar',
+  'Cashville',
+  'Fintech Hub',
+];
 const STATUS_OPTIONS: { value: UserStatus | ''; label: string }[] = [
   { value: '', label: 'Select' },
   { value: 'active', label: 'Active' },
@@ -55,7 +61,8 @@ const FilterPanel = ({
     };
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      return () =>
+        document.removeEventListener('mousedown', handleClickOutside);
     }
   }, [isOpen, onClose]);
 

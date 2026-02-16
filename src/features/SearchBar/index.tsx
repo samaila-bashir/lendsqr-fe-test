@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react'; // Adjust path as needed
+import { Search } from 'lucide-react';
 import styles from './SearchBar.module.scss';
 import Input from '@/components/Input';
 
