@@ -24,6 +24,17 @@
 @font-face {
   font-family: 'Avenir Next';
   src:
+    url('../assets/fonts/AvenirNextCyr-Demi.woff2') format('woff2'),
+    url('../assets/fonts/AvenirNextCyr-Demi.woff') format('woff'),
+    url('../assets/fonts/AvenirNextCyr-Demi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src:
     url('../assets/fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
     url('../assets/fonts/AvenirNextCyr-Bold.woff') format('woff'),
     url('../assets/fonts/AvenirNextCyr-Bold.ttf') format('truetype');

@@ -3,6 +3,10 @@
 .form {
   max-width: 50%;
   width: 100%;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 }
 
 .form_col {
@@ -16,8 +20,12 @@
 
   @media (max-width: 768px) {
     box-shadow: none;
-    padding: 20px;
+    padding: 10px;
     justify-content: flex-start;
+  }
+
+  @media (width: 1024px) {
+    padding: 60px;
   }
 }
 
@@ -54,7 +62,7 @@
 .forgotPassword {
   display: block;
   font-family: v.$font-secondary;
-  font-weight: v.$weight-medium;
+  font-weight: v.$weight-semibold;
   font-size: 12px;
   color: v.$color-secondary;
   text-transform: uppercase;
@@ -75,4 +83,5 @@
   letter-spacing: 0.1em;
   font-size: 14px;
   font-family: v.$font-secondary;
+  font-weight: v.$weight-semibold;
 }
