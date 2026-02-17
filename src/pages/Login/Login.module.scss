@@ -54,12 +54,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 
   img {
     width: 100%;
     max-width: 700px;
     height: auto;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   @media (max-width: 992px) {

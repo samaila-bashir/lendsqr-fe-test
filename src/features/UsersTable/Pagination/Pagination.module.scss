@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: space-between;
   gap: v.$space-md;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 }
 
 .left {
@@ -22,19 +26,30 @@
 }
 
 .page_size_select {
-  padding: 6px 12px;
-  border: 2px solid rgba(v.$color-gray, 0.2);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding: 6px 30px 6px 10px;
+  border: none;
   border-radius: v.$radius-sm;
   font-family: v.$font-primary;
   font-size: 14px;
   color: v.$color-primary;
-  background: v.$color-white;
+  font-weight: v.$weight-medium;
+  background-color: rgba(v.$color-primary, 0.06);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23545f7d99' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+
   cursor: pointer;
   margin: 0 4px;
+  width: 80px;
+  height: 30px;
 
   &:focus {
     outline: none;
-    border-color: v.$color-secondary;
   }
 }
 
@@ -47,19 +62,19 @@
 .page_btn {
   min-width: 32px;
   height: 32px;
-  padding: 0 8px;
+  padding: 0 10px;
   border: none;
   border-radius: v.$radius-sm;
   background: transparent;
   font-family: v.$font-primary;
   font-size: 16px;
-  font-weight: 500;
-  color: v.$color-gray;
+  font-weight: v.$weight-medium;
+  color: rgba(v.$color-gray, 0.6);
   cursor: pointer;
 
   &:hover:not(:disabled) {
     color: v.$color-primary;
-    background: rgba(v.$color-secondary, 0.1);
+    background: rgba(v.$color-primary, 0.1);
   }
 
   &:disabled {
@@ -68,13 +83,23 @@
   }
 
   &--active {
-    background: v.$color-secondary;
-    color: v.$color-white;
+    color: v.$color-gray;
   }
 
   &--ellipsis {
     cursor: default;
     min-width: 24px;
+    padding: 0;
+  }
+
+  &.arrow_btn {
+    background-color: rgba(v.$color-primary, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: v.$color-primary;
     padding: 0;
   }
 }

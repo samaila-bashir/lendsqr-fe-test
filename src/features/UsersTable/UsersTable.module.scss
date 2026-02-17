@@ -7,10 +7,17 @@
 .table_wrapper {
   position: relative;
   background-color: v.$color-white;
-  border-radius: v.$radius-md;
+  border-radius: v.$radius-sm;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   overflow-x: auto;
   padding: v.$space-lg;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .table {
@@ -21,7 +28,7 @@
 
 .th {
   text-align: left;
-  padding: 20px 16px;
+  padding: 20px 12px;
   font-weight: v.$weight-semibold;
   color: v.$color-gray;
   text-transform: uppercase;
@@ -68,10 +75,11 @@
 }
 
 .td {
-  padding: 14px 16px;
+  padding: 14px 12px;
   border-bottom: 1px solid rgba(v.$color-gray, 0.1);
   color: v.$color-primary;
   vertical-align: middle;
+  font-size: 14px;
 }
 
 .tr:hover .td {
@@ -83,16 +91,16 @@
   padding: 4px 12px;
   border-radius: 100px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: v.$weight-medium;
   text-transform: capitalize;
 
   &--active {
-    background: rgba(57, 205, 204, 0.1);
-    color: #39cdcc;
+    background: rgba(57, 205, 98, 0.06);
+    color: #39cd62;
   }
 
   &--inactive {
-    background: rgba(84, 95, 125, 0.1);
+    background: rgba(v.$color-gray, 0.06);
     color: v.$color-gray;
   }
 
@@ -102,7 +110,7 @@
   }
 
   &--blacklisted {
-    background: rgba(228, 3, 59, 0.1);
+    background: rgba(v.$color-error, 0.1);
     color: v.$color-error;
   }
 }
@@ -178,16 +186,18 @@
 // Vertical filter panel – starts below the table header so the filter toggle stays clickable
 .filter_panel {
   position: absolute;
-  top: 58px;
+  top: 80px;
   left: 0;
   z-index: 10;
-  min-width: 280px;
+  min-width: 270px;
   max-width: 320px;
   background: v.$color-white;
-  border-radius: v.$radius-md;
+  border-radius: v.$radius-sm;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.07);
   padding: v.$space-lg;
   margin: 0 0 0 12px;
+  height: 550px;
+  border: 1px solid rgba(84, 95, 125, 0.14);
 }
 
 .filter_form {
@@ -197,7 +207,7 @@
 }
 
 .filter_form_group {
-  margin-bottom: v.$space-md;
+  margin-bottom: v.$space-lg;
 
   &:last-of-type {
     margin-bottom: v.$space-lg;
@@ -206,8 +216,8 @@
 
 .filter_label {
   display: block;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: v.$weight-medium;
   color: v.$color-gray;
   margin-bottom: 6px;
 }
@@ -216,9 +226,9 @@
 .filter_select {
   width: 100%;
   min-height: 40px;
-  padding: 10px 12px;
+  padding: 10px 16px;
   border: 1px solid rgba(v.$color-gray, 0.2);
-  border-radius: v.$radius-sm;
+  border-radius: v.$radius-md;
   font-family: v.$font-primary;
   font-size: 14px;
   color: v.$color-primary;
@@ -276,7 +286,7 @@
   border-radius: v.$radius-md;
   font-family: v.$font-primary;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: v.$weight-medium;
   cursor: pointer;
   border: 1px solid transparent;
 

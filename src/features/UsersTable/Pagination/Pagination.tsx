@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './Pagination.module.scss';
 
 interface PaginationProps {
@@ -53,16 +54,19 @@ const Pagination = ({
       <div className={styles.right}>
         <button
           type="button"
-          className={styles.page_btn}
+          className={`${styles.page_btn} ${styles.arrow_btn}`}
           onClick={() => onPageChange(page - 1)}
           disabled={page <= 1}
           aria-label="Previous page"
         >
-          &lt;
+          <ChevronLeft />
         </button>
         {getPageNumbers().map((p, i) =>
           p === 'ellipsis' ? (
-            <span key={`ellipsis-${i}`} className={`${styles.page_btn} ${styles['page_btn--ellipsis']}`}>
+            <span
+              key={`ellipsis-${i}`}
+              className={`${styles.page_btn} ${styles['page_btn--ellipsis']}`}
+            >
               ...
             </span>
           ) : (
@@ -80,12 +84,12 @@ const Pagination = ({
         )}
         <button
           type="button"
-          className={styles.page_btn}
+          className={`${styles.page_btn} ${styles.arrow_btn}`}
           onClick={() => onPageChange(page + 1)}
           disabled={page >= totalPages}
           aria-label="Next page"
         >
-          &gt;
+          <ChevronRight />
         </button>
       </div>
     </section>

@@ -31,3 +31,5 @@ export { default as FilterResultsButton } from './filter-results-button.png';
 export { default as UserAvatar } from './user-avatar.png';
 export { default as FilledStar } from './filled-star.png';
 export { default as EmptyStar } from './empty-star.png';
+export { default as Tire } from './tire 1.png';
+export { default as SignOut } from './sign-out 1.png';

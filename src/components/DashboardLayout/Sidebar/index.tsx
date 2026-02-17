@@ -1,7 +1,7 @@
 import { ChevronDownIcon, X } from 'lucide-react';
 import navLinks from './navlinks';
 import styles from './Sidebar.module.scss';
-import { UserPlaceholder } from '@/assets/images';
+import { SignOut, UserPlaceholder } from '@/assets/images';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -54,6 +54,17 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           );
         })}
       </ul>
+
+      <div className={styles.sidebar_footer}>
+        <button
+          className={styles.logout_btn}
+          onClick={() => console.log('logout')}
+        >
+          <img src={SignOut} alt="Sign out" />
+          <span>Logout</span>
+        </button>
+        <span className={styles.version}>v1.2.0</span>
+      </div>
     </nav>
   );
 };

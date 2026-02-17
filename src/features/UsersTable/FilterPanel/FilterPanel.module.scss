@@ -35,7 +35,7 @@
   label {
     display: block;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: v.$weight-medium;
     color: v.$color-gray;
     margin-bottom: 6px;
   }
@@ -46,10 +46,10 @@
   width: 100%;
   padding: 12px 16px;
   border: 2px solid rgba(v.$color-gray, 0.2);
-  border-radius: v.$radius-sm;
+  border-radius: v.$radius-md;
   font-family: v.$font-primary;
   font-size: 14px;
-  color: v.$color-primary;
+  color: v.$color-error;
   background: v.$color-white;
 
   &:focus {
@@ -83,13 +83,13 @@
   border-radius: v.$radius-md;
   font-family: v.$font-primary;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: v.$weight-medium;
   cursor: pointer;
   border: 2px solid transparent;
 
   &--reset {
     background: v.$color-white;
-    border-color: rgba(v.$color-gray, 0.2);
+    border-color: v.$color-gray;
     color: v.$color-gray;
   }
 
