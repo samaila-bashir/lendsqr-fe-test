@@ -4,6 +4,10 @@
   max-width: 50%;
   width: 100%;
 
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
+
   @media (max-width: 600px) {
     max-width: 100%;
   }
@@ -18,8 +22,12 @@
   min-height: 100vh;
   box-shadow: -20px 0px 100px rgba(84, 95, 125, 0.05);
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
+    padding: 40px 48px;
     box-shadow: none;
+  }
+
+  @media (max-width: 768px) {
     padding: 10px;
     justify-content: flex-start;
   }

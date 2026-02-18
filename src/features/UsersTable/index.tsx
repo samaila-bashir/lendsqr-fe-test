@@ -381,7 +381,10 @@ const UsersTable = () => {
             <thead>
               <tr>
                 {COLUMNS.map((col) => (
-                  <th key={col.key} className={styles.th}>
+                  <th
+                    key={col.key}
+                    className={`${styles.th} ${col.key === 'dateJoined' ? styles.th_date : ''}`}
+                  >
                     <span className={styles.th_content}>
                       {col.label}
                       <button
@@ -410,7 +413,7 @@ const UsersTable = () => {
                   <td className={styles.td}>{user.username}</td>
                   <td className={styles.td}>{user.email}</td>
                   <td className={styles.td}>{user.phoneNumber}</td>
-                  <td className={styles.td}>{user.dateJoined}</td>
+                  <td className={`${styles.td} ${styles.td_date}`}>{user.dateJoined}</td>
                   <td className={styles.td}>
                     <span
                       className={`${styles.status_pill} ${styles[`status_pill--${user.status}`]}`}

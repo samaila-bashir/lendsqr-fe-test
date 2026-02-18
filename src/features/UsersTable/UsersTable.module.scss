@@ -82,6 +82,12 @@
   font-size: 14px;
 }
 
+.th_date,
+.td_date {
+  white-space: nowrap;
+  min-width: 160px;
+}
+
 .tr:hover .td {
   background-color: rgba(v.$color-secondary, 0.03);
 }

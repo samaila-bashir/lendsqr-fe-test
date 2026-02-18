@@ -218,21 +218,24 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0 30px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  justify-content: space-between;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
   @media (max-width: 600px) {
-    padding: 0px 15px;
+    padding: 0 16px;
+    justify-content: flex-start;
   }
 }
 
 .tab {
   flex: 0 0 auto;
   scroll-snap-align: start;
-  min-width: 0;
+  min-width: max-content;
   padding: 12px 20px;
   font-family: v.$font-family-tabs;
   font-size: 16px;
@@ -248,7 +251,6 @@
   margin: 0;
 
   @media (min-width: 1300px) {
-    flex: 1;
     text-align: center;
     padding: 12px 25px;
   }
@@ -261,6 +263,7 @@
     color: v.$color-secondary;
     border-bottom-color: v.$color-secondary;
     font-family: v.$font-primary;
+    font-weight: v.$weight-regular;
   }
 }
 
