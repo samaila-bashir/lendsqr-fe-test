@@ -3,7 +3,7 @@ import { MoveLeft } from 'lucide-react';
 import { UserAvatar, FilledStar, EmptyStar } from '@/assets/images';
 import styles from './UserDetails.module.scss';
 import { guarantorData, sections } from './userDetailsData';
-import DetailItem from './Detail_Item';
+import DetailItem from './DetailItem';
 import GuarantorSection from './GuarantorSection';
 
 const TABS = [

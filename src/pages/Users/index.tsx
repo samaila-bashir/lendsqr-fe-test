@@ -1,5 +1,5 @@
 import { UsersIcon, Users2Icon, LoanIcon, MoneyIcon } from '@/assets/images';
-import UsersTable from '@/features/UsersTable';
+import UsersTable from '@/pages/Users/UsersTable';
 import styles from './Users.module.scss';
 
 const STATS = [

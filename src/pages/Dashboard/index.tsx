@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar';
-import styles from './DashboardLayout.module.scss';
+import styles from './Dashboard.module.scss';
 import { useState } from 'react';
 
 const DashboardLayout = () => {

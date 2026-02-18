@@ -1,4 +1,4 @@
-import styles from './UserDetails.module.scss';
+import styles from '../UserDetails.module.scss';
 
 interface DetailItemProps {
   label: string;

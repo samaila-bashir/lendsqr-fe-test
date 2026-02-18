@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { MoreVertical, Eye, UserX, UserCheck, Calendar } from 'lucide-react';
 import { FilterResultsButton } from '@/assets/images';
 import { MOCK_USERS, type User, type UserStatus } from '@/data/users';
-import { DEFAULT_FILTERS, type FilterValues } from './FilterPanel/FilterPanel';
-import Pagination from './Pagination/Pagination';
+import { DEFAULT_FILTERS, type FilterValues } from './FilterPanel';
+import Pagination from './Pagination';
 import styles from './UsersTable.module.scss';
 
 const ORGANIZATIONS = [
@@ -413,7 +413,9 @@ const UsersTable = () => {
                   <td className={styles.td}>{user.username}</td>
                   <td className={styles.td}>{user.email}</td>
                   <td className={styles.td}>{user.phoneNumber}</td>
-                  <td className={`${styles.td} ${styles.td_date}`}>{user.dateJoined}</td>
+                  <td className={`${styles.td} ${styles.td_date}`}>
+                    {user.dateJoined}
+                  </td>
                   <td className={styles.td}>
                     <span
                       className={`${styles.status_pill} ${styles[`status_pill--${user.status}`]}`}

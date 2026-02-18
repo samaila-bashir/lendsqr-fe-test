@@ -1,7 +1,7 @@
 import { Dropdown, Logo, Notification, UserPlaceholder } from '@/assets/images';
 import styles from './Topbar.module.scss';
 import { Menu } from 'lucide-react';
-import SearchBar from '@/features/SearchBar';
+import SearchBar from '@/pages/Dashboard/SearchBar';
 
 const Topbar = ({ onToggle }: { onToggle: () => void }) => {
   return (

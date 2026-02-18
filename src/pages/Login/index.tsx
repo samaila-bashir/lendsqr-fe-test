@@ -1,4 +1,4 @@
-import LoginForm from '@/features/LoginForm';
+import LoginForm from '@/pages/Login/LoginForm';
 import styles from './Login.module.scss';
 import { LoginIllustration, Logo } from '@/assets/images';
 

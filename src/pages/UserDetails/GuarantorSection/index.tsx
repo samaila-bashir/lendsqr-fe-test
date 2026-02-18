@@ -1,5 +1,5 @@
-import DetailItem from './Detail_Item';
-import styles from './UserDetails.module.scss';
+import DetailItem from '../DetailItem';
+import styles from '../UserDetails.module.scss';
 
 export interface Guarantor {
   fullName: string;
