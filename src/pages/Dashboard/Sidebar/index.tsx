@@ -38,7 +38,11 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       <div className={styles.mobile_profile}>
         <div className={styles.user_info}>
-          <img src={user?.avatarUrl ?? UserPlaceholder} alt="Avatar" className={styles.avatar} />
+          <img
+            src={user?.avatarUrl ?? UserPlaceholder}
+            alt="Avatar"
+            className={styles.avatar}
+          />
           <span>{user?.name ?? 'User'}</span>
         </div>
       </div>

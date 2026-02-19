@@ -27,7 +27,11 @@ const Topbar = ({ onToggle }: { onToggle: () => void }) => {
         <div className={styles.notification_area}>
           <img src={Notification} alt="Notification Bell" />
           <div className={styles.user_profile}>
-            <img src={user?.avatarUrl ?? UserPlaceholder} alt="Avatar" className={styles.avatar} />
+            <img
+              src={user?.avatarUrl ?? UserPlaceholder}
+              alt="Avatar"
+              className={styles.avatar}
+            />
             <p>{user?.name ?? 'User'}</p>
             <img src={Dropdown} alt="dropdown" />
           </div>

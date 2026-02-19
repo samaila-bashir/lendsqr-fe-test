@@ -21,7 +21,10 @@ const selectUsersListLength = (state: RootState) => state.users.list.length;
 function* loadUsersWorker(): Generator {
   const loadStatus = yield select(selectUsersLoadStatus);
   const listLength = yield select(selectUsersListLength);
-  if (loadStatus === USERS_LOAD_STATUS.DONE || listLength >= USERS_TOTAL_COUNT) {
+  if (
+    loadStatus === USERS_LOAD_STATUS.DONE ||
+    listLength >= USERS_TOTAL_COUNT
+  ) {
     return;
   }
 
