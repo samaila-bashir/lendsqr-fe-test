@@ -1,6 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import {
   USERS_LOAD_STATUS,
+  USERS_TOTAL_COUNT,
   type UsersLoadStatus,
 } from '@/constants';
 
@@ -11,8 +12,6 @@ interface UsersState {
   error: string | null;
   searchQuery: string;
 }
-
-const MAX_USERS = 500;
 
 const initialState: UsersState = {
   list: [],
@@ -34,7 +33,7 @@ const usersSlice = createSlice({
       }
     },
     addUsersBatch(state, action: PayloadAction<UserTypes.User[]>) {
-      const remaining = MAX_USERS - state.list.length;
+      const remaining = USERS_TOTAL_COUNT - state.list.length;
       if (remaining <= 0) return;
       const toAdd = action.payload.slice(0, remaining);
       state.list.push(...toAdd);
