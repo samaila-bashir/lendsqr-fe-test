@@ -1,5 +1,5 @@
 import { call, delay, put, select, takeLeading } from 'redux-saga/effects';
-import type { RootState } from '../types';
+import type { RootState } from '../../types';
 import {
   USERS_BATCH_DELAY_MS,
   USERS_BATCH_SIZE,
@@ -13,12 +13,12 @@ import {
   setUsersLoadError,
   setUsersLoadProgress,
   setUsersLoadStatus,
-} from '../slices/usersSlice';
+} from '../../slices/usersSlice';
 
 const selectUsersLoadStatus = (state: RootState) => state.users.loadStatus;
 const selectUsersListLength = (state: RootState) => state.users.list.length;
 
-function* loadUsersWorker(): Generator {
+export function* loadUsersWorker(): Generator {
   const loadStatus = yield select(selectUsersLoadStatus);
   const listLength = yield select(selectUsersListLength);
   if (
