@@ -1,19 +1,8 @@
-import { Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import DashboardLayout from './pages/Dashboard';
-import Users from './pages/Users';
-import UserDetails from './pages/UserDetails';
+import { useRoutes } from 'react-router-dom';
+import { routeConfig } from '@/routes/config';
 
 const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/users" element={<DashboardLayout />}>
-        <Route index element={<Users />} />
-        <Route path="details" element={<UserDetails />} />
-      </Route>
-    </Routes>
-  );
+  return useRoutes(routeConfig);
 };
 
 export default App;

@@ -1,0 +1,69 @@
+@use '@/styles/variables' as v;
+
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: v.$color-white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+// Wrapper so the loader is the same width as the logo (sizes to logo).
+.logo_and_loader {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  gap: 24px;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.progress_wrapper {
+  width: 100%;
+}
+
+.progress_track {
+  position: relative;
+  height: 28px;
+  width: 100%;
+  min-width: 120px;
+  background-color: rgba(v.$color-primary, 0.12);
+  border-radius: v.$radius-md;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress_fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: v.$color-secondary;
+  border-radius: v.$radius-md;
+  transition: width 0.25s ease;
+}
+
+.progress_percent {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: v.$weight-semibold;
+  font-family: v.$font-primary;
+  color: v.$color-primary;
+  text-shadow: 0 0 1px v.$color-white, 0 1px 2px rgba(0, 0, 0, 0.08);
+}

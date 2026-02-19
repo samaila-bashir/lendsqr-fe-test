@@ -136,6 +136,13 @@
   gap: 10px;
   cursor: pointer;
 
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   p {
     font-weight: v.$weight-medium;
     color: v.$color-primary;

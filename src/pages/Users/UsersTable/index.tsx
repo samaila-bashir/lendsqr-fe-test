@@ -2,19 +2,17 @@ import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoreVertical, Eye, UserX, UserCheck, Calendar } from 'lucide-react';
 import { FilterResultsButton } from '@/assets/images';
-import { MOCK_USERS, type User, type UserStatus } from '@/data/users';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectSearchQuery,
+  selectUsersList,
+  updateUserStatus,
+} from '@/store/slices/usersSlice';
 import { DEFAULT_FILTERS, type FilterValues } from './FilterPanel';
 import Pagination from './Pagination';
 import styles from './UsersTable.module.scss';
 
-const ORGANIZATIONS = [
-  'Lendsqr',
-  'Irorun',
-  'Lendstar',
-  'Cashville',
-  'Fintech Hub',
-];
-const STATUS_OPTIONS: { value: UserStatus | ''; label: string }[] = [
+const STATUS_OPTIONS: { value: UserTypes.UserStatus | ''; label: string }[] = [
   { value: '', label: 'Select' },
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' },
@@ -53,7 +51,26 @@ function parseDateToIso(value: string): string {
   return `${year}-${month}-${day}`;
 }
 
-function applyFilters(users: User[], filters: FilterValues): User[] {
+function applyFullTextSearch(users: UserTypes.User[], query: string | undefined): UserTypes.User[] {
+  const trimmed = (query ?? '').trim();
+  if (!trimmed) return users;
+  const tokens = trimmed.toLowerCase().split(/\s+/).filter(Boolean);
+  return users.filter((u) => {
+    const searchable = [
+      u.organization,
+      u.username,
+      u.email,
+      u.phoneNumber,
+      u.dateJoined,
+      u.status,
+    ]
+      .join(' ')
+      .toLowerCase();
+    return tokens.every((t) => searchable.includes(t));
+  });
+}
+
+function applyFilters(users: UserTypes.User[], filters: FilterValues): UserTypes.User[] {
   return users.filter((u) => {
     if (filters.organization && u.organization !== filters.organization)
       return false;
@@ -85,11 +102,11 @@ function applyFilters(users: User[], filters: FilterValues): User[] {
 }
 
 interface RowActionsProps {
-  user: User;
+  user: UserTypes.User;
   onClose: () => void;
-  onViewDetails: (user: User) => void;
-  onBlacklist: (user: User) => void;
-  onActivate: (user: User) => void;
+  onViewDetails: (user: UserTypes.User) => void;
+  onBlacklist: (user: UserTypes.User) => void;
+  onActivate: (user: UserTypes.User) => void;
 }
 
 const RowActions = ({
@@ -147,13 +164,20 @@ const RowActions = ({
 
 const UsersTable = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // User list is read from the store (users reducer); populated on app launch by the users saga.
+  const users = useSelector(selectUsersList);
+  const searchQuery = useSelector(selectSearchQuery);
+  const organizations = useMemo(
+    () => [...new Set(users.map((u) => u.organization))].sort(),
+    [users]
+  );
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [filters, setFilters] = useState<FilterValues>(DEFAULT_FILTERS);
   const [dateDisplayValue, setDateDisplayValue] = useState('');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(9);
   const [openActionsId, setOpenActionsId] = useState<string | null>(null);
-  const [users, setUsers] = useState<User[]>(MOCK_USERS);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -177,8 +201,8 @@ const UsersTable = () => {
   }, [isFilterOpen]);
 
   const filtered = useMemo(
-    () => applyFilters(users, filters),
-    [users, filters]
+    () => applyFullTextSearch(applyFilters(users, filters), searchQuery),
+    [users, filters, searchQuery]
   );
   const totalFiltered = filtered.length;
   const totalPages = Math.ceil(totalFiltered / pageSize) || 1;
@@ -188,27 +212,18 @@ const UsersTable = () => {
     return filtered.slice(start, start + pageSize);
   }, [filtered, currentPage, pageSize]);
 
-  const handleViewDetails = (user: User) => {
+  const handleViewDetails = (user: UserTypes.User) => {
     setOpenActionsId(null);
-    navigate('/users/details');
-    void user;
+    navigate(`/users/details/${user.id}`);
   };
 
-  const handleBlacklist = (user: User) => {
-    setUsers((prev) =>
-      prev.map((u) =>
-        u.id === user.id ? { ...u, status: 'blacklisted' as UserStatus } : u
-      )
-    );
+  const handleBlacklist = (user: UserTypes.User) => {
+    dispatch(updateUserStatus({ id: user.id, status: 'blacklisted' }));
     setOpenActionsId(null);
   };
 
-  const handleActivate = (user: User) => {
-    setUsers((prev) =>
-      prev.map((u) =>
-        u.id === user.id ? { ...u, status: 'active' as UserStatus } : u
-      )
-    );
+  const handleActivate = (user: UserTypes.User) => {
+    dispatch(updateUserStatus({ id: user.id, status: 'active' }));
     setOpenActionsId(null);
   };
 
@@ -248,7 +263,7 @@ const UsersTable = () => {
                     aria-label="Filter by organization"
                   >
                     <option value="">Select</option>
-                    {ORGANIZATIONS.map((org) => (
+                    {organizations.map((org) => (
                       <option key={org} value={org}>
                         {org}
                       </option>

@@ -1,9 +1,12 @@
 import { Dropdown, Logo, Notification, UserPlaceholder } from '@/assets/images';
+import { useAuth } from '@/hooks/useAuth';
 import styles from './Topbar.module.scss';
 import { Menu } from 'lucide-react';
 import SearchBar from '@/pages/Dashboard/SearchBar';
 
 const Topbar = ({ onToggle }: { onToggle: () => void }) => {
+  const { user } = useAuth();
+
   return (
     <div className={styles.topbar_container}>
       <div className={styles.mobile_header}>
@@ -24,8 +27,8 @@ const Topbar = ({ onToggle }: { onToggle: () => void }) => {
         <div className={styles.notification_area}>
           <img src={Notification} alt="Notification Bell" />
           <div className={styles.user_profile}>
-            <img src={UserPlaceholder} alt="Avatar" />
-            <p>Adedeji</p>
+            <img src={user?.avatarUrl ?? UserPlaceholder} alt="Avatar" className={styles.avatar} />
+            <p>{user?.name ?? 'User'}</p>
             <img src={Dropdown} alt="dropdown" />
           </div>
         </div>

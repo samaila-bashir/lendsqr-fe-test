@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import styles from './FilterPanel.module.scss';
-import type { UserStatus } from '@/data/users';
 
 export interface FilterValues {
   organization: string;
@@ -21,14 +20,7 @@ const DEFAULT_FILTERS: FilterValues = {
   status: '',
 };
 
-const ORGANIZATIONS = [
-  'Lendsqr',
-  'Irorun',
-  'Lendstar',
-  'Cashville',
-  'Fintech Hub',
-];
-const STATUS_OPTIONS: { value: UserStatus | ''; label: string }[] = [
+const STATUS_OPTIONS: { value: UserTypes.UserStatus | ''; label: string }[] = [
   { value: '', label: 'Select' },
   { value: 'active', label: 'Active' },
   { value: 'inactive', label: 'Inactive' },
@@ -42,6 +34,8 @@ interface FilterPanelProps {
   filters: FilterValues;
   onFiltersChange: (f: FilterValues) => void;
   onApply: () => void;
+  /** Organization options (e.g. unique from loaded users). */
+  organizations: string[];
 }
 
 const FilterPanel = ({
@@ -50,6 +44,7 @@ const FilterPanel = ({
   filters,
   onFiltersChange,
   onApply,
+  organizations,
 }: FilterPanelProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -90,7 +85,7 @@ const FilterPanel = ({
             }
           >
             <option value="">Select</option>
-            {ORGANIZATIONS.map((org) => (
+            {organizations.map((org) => (
               <option key={org} value={org}>
                 {org}
               </option>

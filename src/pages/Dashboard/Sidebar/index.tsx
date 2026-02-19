@@ -1,7 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { ChevronDownIcon, X } from 'lucide-react';
 import navLinks from './navlinks';
 import styles from './Sidebar.module.scss';
 import { SignOut, UserPlaceholder } from '@/assets/images';
+import { useDispatch } from 'react-redux';
+import { useAuth } from '@/hooks/useAuth';
+import { clearAuth } from '@/store/slices/authSlice';
+import { clearUsers } from '@/store/slices/usersSlice';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -9,6 +14,16 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
+  const handleLogout = () => {
+    dispatch(clearUsers());
+    dispatch(clearAuth());
+    navigate('/', { replace: true });
+    onClose();
+  };
   return (
     <nav
       className={`${styles.sidebar_container} ${isOpen ? styles.mobile_open : ''}`}
@@ -23,8 +38,8 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       <div className={styles.mobile_profile}>
         <div className={styles.user_info}>
-          <img src={UserPlaceholder} alt="Avatar" className={styles.avatar} />
-          <span>Adedeji</span>
+          <img src={user?.avatarUrl ?? UserPlaceholder} alt="Avatar" className={styles.avatar} />
+          <span>{user?.name ?? 'User'}</span>
         </div>
       </div>
 
@@ -57,8 +72,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       <div className={styles.sidebar_footer}>
         <button
+          type="button"
           className={styles.logout_btn}
-          onClick={() => console.log('logout')}
+          onClick={handleLogout}
         >
           <img src={SignOut} alt="Sign out" />
           <span>Logout</span>

@@ -67,6 +67,13 @@
   margin-top: 7px;
 }
 
+.form_error {
+  margin-top: 8px;
+  font-size: 14px;
+  color: v.$color-error;
+  font-family: v.$font-primary;
+}
+
 .forgotPassword {
   display: block;
   font-family: v.$font-secondary;

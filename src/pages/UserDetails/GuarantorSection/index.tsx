@@ -1,15 +1,8 @@
 import DetailItem from '../DetailItem';
 import styles from '../UserDetails.module.scss';
 
-export interface Guarantor {
-  fullName: string;
-  phone: string;
-  email: string;
-  relationship: string;
-}
-
 interface GuarantorSectionProps {
-  guarantors: Guarantor[];
+  guarantors: UserTypes.Guarantor[];
 }
 
 const GuarantorSection = ({ guarantors }: GuarantorSectionProps) => {
