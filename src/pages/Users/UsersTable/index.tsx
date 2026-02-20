@@ -102,7 +102,7 @@ const UsersTable = () => {
   return (
     <>
       <section className={styles.table_section}>
-        <div className={styles.table_wrapper}>
+        <div className={styles.table_container}>
           {isFilterOpen && (
             <TableFilterForm
               filters={filters}
@@ -117,7 +117,7 @@ const UsersTable = () => {
               }}
             />
           )}
-
+          <div className={styles.table_wrapper}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -197,6 +197,7 @@ const UsersTable = () => {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </section>
 
