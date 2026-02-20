@@ -24,8 +24,29 @@ const Pagination = ({
     if (totalPages <= 7) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
-    const pages: (number | 'ellipsis')[] = [];
-    pages.push(1, 2, 3, 'ellipsis', totalPages - 1, totalPages);
+
+    const siblingCount = 2;
+    const leftSibling = Math.max(2, page - siblingCount);
+    const rightSibling = Math.min(totalPages - 1, page + siblingCount);
+
+    const pages: (number | 'ellipsis')[] = [1];
+
+    if (leftSibling > 2) {
+      pages.push('ellipsis');
+    }
+
+    for (let i = leftSibling; i <= rightSibling; i++) {
+      pages.push(i);
+    }
+
+    if (rightSibling < totalPages - 1) {
+      pages.push('ellipsis');
+    }
+
+    if (totalPages > 1) {
+      pages.push(totalPages);
+    }
+
     return pages;
   };
 

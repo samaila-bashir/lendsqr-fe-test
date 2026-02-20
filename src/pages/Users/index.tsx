@@ -8,7 +8,6 @@ import { selectUsersList } from '@/store/slices/usersSlice';
 const Users = () => {
   const users = useSelector(selectUsersList);
 
-  // All metrics from the same 500 users loaded on app start (Faker, batched into store).
   const STATS = useMemo(() => {
     const total = users.length;
     const active = users.filter((u) => u.status === 'active').length;

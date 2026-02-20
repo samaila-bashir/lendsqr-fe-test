@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
+import { STATUS_OPTIONS } from '../usersTableConstants';
 import styles from './FilterPanel.module.scss';
 
 export interface FilterValues {
@@ -19,14 +20,6 @@ const DEFAULT_FILTERS: FilterValues = {
   phoneNumber: '',
   status: '',
 };
-
-const STATUS_OPTIONS: { value: UserTypes.UserStatus | ''; label: string }[] = [
-  { value: '', label: 'Select' },
-  { value: 'active', label: 'Active' },
-  { value: 'inactive', label: 'Inactive' },
-  { value: 'pending', label: 'Pending' },
-  { value: 'blacklisted', label: 'Blacklisted' },
-];
 
 interface FilterPanelProps {
   isOpen: boolean;
