@@ -58,6 +58,11 @@
   border: 2px solid v.$color-error;
   background: transparent;
   color: v.$color-error;
+
+  @media (max-width: 600px) {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
 }
 
 .btn_activate {
@@ -72,6 +77,11 @@
   border: 2px solid v.$color-secondary;
   background: transparent;
   color: v.$color-secondary;
+
+  @media (max-width: 600px) {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
 }
 
 // One card for summary + tabs so they share the same background
@@ -81,6 +91,7 @@
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   margin-bottom: v.$space-lg;
   overflow: hidden;
+
 }
 
 .summary_card {
@@ -89,6 +100,14 @@
   flex-wrap: wrap;
   align-items: stretch;
   gap: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding: v.$space-xl v.$space-md;
+    gap: v.$space-lg;
+    text-align: center;
+  }
 
   @media (width: 1024px) {
     padding: v.$space-sm;
@@ -123,11 +142,6 @@
       font-size: 14px;
       font-weight: 500;
     }
-
-    @media (max-width: 600px) {
-      justify-content: flex-start;
-      margin-top: 20px;
-    }
   }
 
   &--amount {
@@ -141,15 +155,36 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+    width: 100%;
     border-right: none;
+    border-bottom: none;
+    padding: 0;
+    gap: v.$space-sm;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
     &:not(:first-child) {
-      padding-left: v.$space-sm;
+      padding-left: 0;
     }
 
     &:last-child {
-      margin-top: 30px;
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--tier,
+    &--amount {
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &:first-child {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -170,6 +205,11 @@
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .summary_name {
@@ -177,12 +217,20 @@
   font-weight: v.$weight-medium;
   color: v.$color-primary;
   margin: 0 0 4px 0;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 }
 
 .summary_id {
   font-size: 14px;
   color: v.$color-gray;
   margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 }
 
 .tier_section {
@@ -196,6 +244,10 @@
     height: 16px;
     object-fit: contain;
   }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .summary_amount {
@@ -203,12 +255,22 @@
   font-weight: v.$weight-semibold;
   color: v.$color-primary;
   margin: 0;
+  word-break: break-all;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 }
 
 .summary_bank {
   font-size: 12px;
   color: v.$color-primary;
   margin: 7px 0 0;
+  word-break: break-word;
+
+  @media (max-width: 600px) {
+    font-size: 11px;
+  }
 }
 
 .tabs_row {
@@ -272,6 +334,10 @@
   border-radius: v.$radius-sm;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   padding: v.$space-lg;
+
+  @media (max-width: 768px) {
+    padding: v.$space-md;
+  }
 }
 
 .section_block {
@@ -299,6 +365,11 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: v.$space-md v.$space-xl;
   margin-bottom: 0;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: v.$space-md;
+  }
 }
 
 .detail_item {
