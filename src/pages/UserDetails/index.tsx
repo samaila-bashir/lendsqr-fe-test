@@ -5,7 +5,7 @@ import { UserAvatar, FilledStar, EmptyStar } from '@/assets/images';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserById, updateUserStatus } from '@/store/slices/usersSlice';
 import styles from './UserDetails.module.scss';
-import { generateUserDetailsFromFaker } from './userDetailsData';
+import { generateUserDetailsFromFaker } from './userDetails.mock';
 import DetailItem from './DetailItem';
 import GuarantorSection from './GuarantorSection';
 
@@ -62,14 +62,20 @@ const UserDetails = () => {
           <button
             type="button"
             className={styles.btn_blacklist}
-            onClick={() => user && dispatch(updateUserStatus({ id: user.id, status: 'blacklisted' }))}
+            onClick={() =>
+              user &&
+              dispatch(updateUserStatus({ id: user.id, status: 'blacklisted' }))
+            }
           >
             Blacklist User
           </button>
           <button
             type="button"
             className={styles.btn_activate}
-            onClick={() => user && dispatch(updateUserStatus({ id: user.id, status: 'active' }))}
+            onClick={() =>
+              user &&
+              dispatch(updateUserStatus({ id: user.id, status: 'active' }))
+            }
           >
             Activate User
           </button>

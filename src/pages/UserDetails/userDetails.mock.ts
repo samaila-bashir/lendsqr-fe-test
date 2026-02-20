@@ -95,7 +95,7 @@ export function generateUserDetailsFromFaker(user?: UserTypes.User): {
   ];
 
   const relationships = ['Sister', 'Brother', 'Father', 'Mother', 'Friend', 'Colleague', 'Spouse'];
-  const guarantors: Guarantor[] = faker.helpers.arrayElements(
+  const guarantors: UserTypes.Guarantor[] = faker.helpers.arrayElements(
     Array.from({ length: 6 }, () => ({
       fullName: faker.person.fullName(),
       phone: '0' + faker.string.numeric(10),
