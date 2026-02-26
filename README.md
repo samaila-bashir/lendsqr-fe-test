@@ -1,4 +1,4 @@
-# Lendsqr Test
+# Lendsqr Dashboard
 
 A user management dashboard for viewing, filtering, and managing users. The app provides a users list with filters (organization, username, email, date, phone, status), pagination, and detailed user profiles including guarantor information.
 
